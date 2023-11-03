@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h1 class="heading">Calculator Javascript</h1>
+
+    <div class="container">
+    <form name="form1">
+
+        <input id="res" type="text" name="Answer" placeholder="0" disabled> <br>
+        <div class="keypad">
+            <input type="button" value="1" onclick="Solve('1')"/>
+            <input type="button" value="2" onclick="Solve('2')">
+            <input type="button" value="3" onclick="Solve('3')">
+            <input type="button" value="+" onclick="Solve('+')">
+            <br>
+            <input type="button" value="4" onclick="Solve('4')">
+            <input type="button" value="5" onclick="Solve('5')">
+            <input type="button" value="6" onclick="Solve('6')">
+            <input type="button" value="-" onclick="Solve('-')">
+            <br>
+            <input type="button" value="7" onclick="Solve('7')">
+            <input type="button" value="8" onclick="Solve('8')">
+            <input type="button" value="9" onclick="Solve('9')">
+            <input type="button" value="x" onclick="Solve('*')">
+            <br>
+            <input type="button" value="/" onclick="Solve('/')">
+            <input type="button" value="0" onclick="Solve('0')">
+            <input type="button" value="." onclick="Solve('.')">
+            <input type="button" value="=" onclick="Result()">
+        </div>
+        <input type="Button" value="AC" onclick = "Clear()" id= "clear" >
+    </form>
+    </div>
+    
+
+
+<script>
+    function Solve(val) {
+         var v = document.getElementById('res');
+         v.value += val;
+      }
+      function Result() {
+         var num1 = document.getElementById('res').value;
+         var num2 = eval(num1);
+         document.getElementById('res').value = num2;
+      }
+      function Clear() {
+         var inp = document.getElementById('res');
+         inp.value = '';
+      }
+      function Back() {
+         var ev = document.getElementById('res');
+         ev.value = ev.value.slice(0,-1);
+      }
+</script>
+
+</body>
+</html>
